@@ -9,6 +9,7 @@
             height: 300vh; /* Makes the page scrollable */
             margin: 0;
             overflow-x: hidden;
+            font-family: Arial, sans-serif;
         }
         canvas {
             display: block;
@@ -16,9 +17,74 @@
             top: 0;
             left: 0;
         }
+
+#spin-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px; /* 🔥 Default Desktop Font */
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif; /* ✅ Futuristic Font */
+    text-transform: uppercase;
+    padding: 20px 40px; /* 🔥 Bigger Box */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    color: #ffffff;
+    border: 3px solid #00eaff; /* 🔹 Thicker Border */
+    border-radius: 15px; /* 🔥 Softer Corners */
+    box-shadow: 0 0 15px #00eaff, 0 0 60px rgba(0, 234, 255, 0.6);
+    text-align: center;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10; /* ✅ Keeps it above the canvas */
+    pointer-events: none; /* ✅ Doesn't block interactions */
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* 🔥 Blink Effect on `!` */
+#spin-message span {
+    animation: blink 1s infinite alternate;
+}
+
+/* 🔥 Pulse Effect */
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 20px #00eaff, 0 0 70px rgba(0, 234, 255, 0.7);
+    }
+    to {
+        box-shadow: 0 0 30px #00eaff, 0 0 90px rgba(0, 234, 255, 0.9);
+    }
+}
+
+/* ✨ Blinking `!` */
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 📱 Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    #spin-message {
+        font-size: 20px; /* 🔥 Slightly Smaller Font */
+        padding: 15px 30px; /* 🔥 Adjust Padding */
+        border-radius: 12px; /* 🔥 Softer Corners */
+    }
+}
+
+@media (max-width: 480px) {
+    #spin-message {
+        font-size: 16px; /* 📱 Smaller Font for Small Screens */
+        padding: 12px 24px; /* ✅ Compact Box */
+        border-width: 2px; /* 🔹 Thinner Border */
+        box-shadow: 0 0 10px #00eaff, 0 0 40px rgba(0, 234, 255, 0.5);
+    }
+}
+
     </style>
 </head>
 <body>
+    <!-- 📌 "Spin Me!" Message -->
+    <div id="spin-message">Spin Me <span>🔄</span></div>
+
     <script type="module" src="script.js"></script>
 </body>
 </html>
