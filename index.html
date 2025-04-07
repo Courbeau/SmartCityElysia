@@ -18,72 +18,97 @@
             left: 0;
         }
 
+/* ✅ PDF Button - Modern Green Energy Style */
+#pdf-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background: rgba(44, 125, 72, 0.8); /* Fresh green overlay */
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    border: none;
+    border-radius: 14px;
+    backdrop-filter: blur(6px); /* Glass effect */
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+}
+
+#pdf-button:hover {
+    background: rgba(34, 197, 94, 1); /* Solid green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.6);
+}
+
+/* ✅ Spin Me Message - Updated to Match Theme */
 #spin-message {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px; /* 🔥 Default Desktop Font */
-    font-weight: bold;
-    font-family: 'Orbitron', sans-serif; /* ✅ Futuristic Font */
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    padding: 20px 40px; /* 🔥 Bigger Box */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #3ddc84, #1f7a3f); /* Smooth green energy gradient */
     color: #ffffff;
-    border: 3px solid #00eaff; /* 🔹 Thicker Border */
-    border-radius: 15px; /* 🔥 Softer Corners */
-    box-shadow: 0 0 15px #00eaff, 0 0 60px rgba(0, 234, 255, 0.6);
+    border-radius: 16px;
+    box-shadow:
+        0 8px 24px rgba(52, 211, 153, 0.3),
+        0 0 15px rgba(34, 197, 94, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
     text-align: center;
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-    z-index: 10; /* ✅ Keeps it above the canvas */
-    pointer-events: none; /* ✅ Doesn't block interactions */
-    animation: pulse 1.5s infinite alternate;
+    transition: all 0.4s ease-in-out;
+    z-index: 10;
+    pointer-events: none;
 }
 
-/* 🔥 Blink Effect on `!` */
 #spin-message span {
     animation: blink 1s infinite alternate;
 }
 
-/* 🔥 Pulse Effect */
-@keyframes pulse {
+/* 🟢 Pulse effect in green */
+@keyframes pulse-green {
     from {
-        box-shadow: 0 0 20px #00eaff, 0 0 70px rgba(0, 234, 255, 0.7);
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.6), 0 0 20px rgba(34, 197, 94, 0.3);
     }
     to {
-        box-shadow: 0 0 30px #00eaff, 0 0 90px rgba(0, 234, 255, 0.9);
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.9), 0 0 40px rgba(34, 197, 94, 0.4);
     }
 }
 
-/* ✨ Blinking `!` */
+/* ✨ Blinking icon */
 @keyframes blink {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
 
-/* 📱 Responsive Design for Mobile Screens */
+/* 📱 Responsive tweaks */
 @media (max-width: 768px) {
     #spin-message {
-        font-size: 20px; /* 🔥 Slightly Smaller Font */
-        padding: 15px 30px; /* 🔥 Adjust Padding */
-        border-radius: 12px; /* 🔥 Softer Corners */
+        font-size: 20px;
+        padding: 14px 28px;
     }
 }
 
 @media (max-width: 480px) {
     #spin-message {
-        font-size: 16px; /* 📱 Smaller Font for Small Screens */
-        padding: 12px 24px; /* ✅ Compact Box */
-        border-width: 2px; /* 🔹 Thinner Border */
-        box-shadow: 0 0 10px #00eaff, 0 0 40px rgba(0, 234, 255, 0.5);
+        font-size: 16px;
+        padding: 12px 24px;
+        border-width: 1.5px;
     }
 }
-
-    </style>
+</style>
 </head>
 <body>
     <!-- 📌 "Spin Me!" Message -->
-    <div id="spin-message">Spin Me <span>🔄</span></div>
+    <div id="spin-message">Spin Me <span>♻️</span></div>
+    <!-- 📄 PDF Button -->
+    <a id="pdf-button" href="Sustainable smart city.pdf" target="_blank">🌿 Tech Specs</a>
 
     <script type="module" src="script.js"></script>
 </body>
